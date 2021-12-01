@@ -1,0 +1,687 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "llama coffee shop",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RandomFactIntent",
+                    "slots": [],
+                    "samples": [
+                        "random fact",
+                        "llama quote",
+                        "tell me a quote",
+                        "tell me a random llama fact",
+                        "hello",
+                        "how are you",
+                        "say hi world",
+                        "say hi",
+                        "hi",
+                        "say hello world",
+                        "say hello"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "OrderDrinkIntent",
+                    "slots": [
+                        {
+                            "name": "drink",
+                            "type": "drinkType",
+                            "samples": [
+                                "{drink} with {modifierQty} {modifier}",
+                                "{drink} {modifier}",
+                                "{drink} {modifierQty} {modifier}",
+                                "{drink}"
+                            ]
+                        },
+                        {
+                            "name": "qty",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "size",
+                            "type": "size",
+                            "samples": [
+                                "{size}  with {modifierQty} {modifier}",
+                                "{size} with {modifier}",
+                                "{size} {modifierQty} {modifier}",
+                                "{size} {modifier}",
+                                "{size} please",
+                                "can I have a {size}",
+                                "{size}"
+                            ]
+                        },
+                        {
+                            "name": "modifier",
+                            "type": "drinkModifier",
+                            "samples": [
+                                "{modifier} {modifierQty}",
+                                "{modifierQty} {modifier}",
+                                "{modifier}"
+                            ],
+                            "multipleValues": {
+                                "enabled": true
+                            }
+                        },
+                        {
+                            "name": "modifierQty",
+                            "type": "modifierQty"
+                        }
+                    ],
+                    "samples": [
+                        "{drink} {size} {modifier}",
+                        "{size} {drink} {modifier}",
+                        "{size} {drink} {modifierQty} {modifier}",
+                        "{drink} {size} {modifierQty} {modifier}",
+                        "{size} {drink}",
+                        "{drink} {modifier}",
+                        "Beverage",
+                        "Can I please have a {size} {drink}  with {modifierQty} {modifier}",
+                        " {drink}",
+                        "Can I order {drink}"
+                    ]
+                },
+                {
+                    "name": "sayOrderIntent",
+                    "slots": [],
+                    "samples": [
+                        "repeat my order",
+                        "What did I order",
+                        "Say my order"
+                    ]
+                },
+                {
+                    "name": "CheckoutIntent",
+                    "slots": [
+                        {
+                            "name": "stayGo",
+                            "type": "stayGo",
+                            "samples": [
+                                "It's for {stayGo}",
+                                "I'd like to {stayGo}",
+                                "{stayGo}"
+                            ]
+                        },
+                        {
+                            "name": "paymentMethod",
+                            "type": "paymentMethod",
+                            "samples": [
+                                "{paymentMethod} it",
+                                "I'd like to pay {paymentMethod}",
+                                "{paymentMethod}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "I'l like it to {stayGo}",
+                        "{stayGo}"
+                    ]
+                },
+                {
+                    "name": "OrderFoodIntent",
+                    "slots": [
+                        {
+                            "name": "food",
+                            "type": "food",
+                            "samples": [
+                                "I'd like a {food}",
+                                "Can I have a {food} please",
+                                "{food}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{food}",
+                        "I'd like {food}",
+                        "Can I order {food}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "drinkType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "green tea"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tea"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "coffee",
+                                "synonyms": [
+                                    "java"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "drinkModifier",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "black",
+                                "synonyms": [
+                                    "none",
+                                    "plain",
+                                    "nothing"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "with milk",
+                                "synonyms": [
+                                    "milk"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "with sugar",
+                                "synonyms": [
+                                    "sugar"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "with cream",
+                                "synonyms": [
+                                    "cream"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "size",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "extra large",
+                                "synonyms": [
+                                    "trenta",
+                                    "omg",
+                                    "huge",
+                                    "xl"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "large",
+                                "synonyms": [
+                                    "venti"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medium ",
+                                "synonyms": [
+                                    "grande",
+                                    "med"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "small",
+                                "synonyms": [
+                                    "tall",
+                                    "tiny"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "stayGo",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "delivery",
+                                "synonyms": [
+                                    "ship it",
+                                    "send it"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "go",
+                                "synonyms": [
+                                    "take out"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "stay",
+                                "synonyms": [
+                                    "here",
+                                    "dine in"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "food",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "donut"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bagel"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "muffin"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "modifierQty",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "five"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "four"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "three",
+                                "synonyms": [
+                                    "triple"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "two",
+                                "synonyms": [
+                                    "double"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "one",
+                                "synonyms": [
+                                    "single"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "paymentMethod",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "debit",
+                                "synonyms": [
+                                    "interact"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "credit",
+                                "synonyms": [
+                                    "credit card",
+                                    "american express",
+                                    "master card",
+                                    "visa"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cash",
+                                "synonyms": [
+                                    "dollar bills"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "OrderDrinkIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.352094758565"
+                    },
+                    "slots": [
+                        {
+                            "name": "drink",
+                            "type": "drinkType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.55600354635.1178447546808"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.255172838847.1053602403206.817654043037"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "qty",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "size",
+                            "type": "size",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.583437482321.896641001616"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.94771314245.32490681012.1131713732868"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "modifier",
+                            "type": "drinkModifier",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.647159903384.1004109397150"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.647159903384.1004109397150.1017310550334"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "modifierQty",
+                            "type": "modifierQty",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "sayOrderIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": []
+                },
+                {
+                    "name": "CheckoutIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "stayGo",
+                            "type": "stayGo",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1276144814764.867394871393"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.1382757635071.1386853359697.267215220838"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "paymentMethod",
+                            "type": "paymentMethod",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1382757635071.1497583838226"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "OrderFoodIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.517004182457"
+                    },
+                    "slots": [
+                        {
+                            "name": "food",
+                            "type": "food",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1477084903041.20051663431"
+                            },
+                            "validations": [
+                                {
+                                    "type": "hasEntityResolutionMatch",
+                                    "prompt": "Slot.Validation.1634994349577.1044499964663.916990896089"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Slot.Validation.255172838847.1053602403206.817654043037",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "We have coffee, tea or green tea.  What  would you like?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.255172838847.125096246096.843725270991",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "You must order at least one beverage."
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.255172838847.125096246096.52846192439",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "You can only order up to twelve beverages using this application."
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.583437482321.896641001616",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What size {drink}  would you like?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1276144814764",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Is your order to stay or go?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1276144814764.867394871393",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Would you like your order to stay, go or delivery?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1634994349577.1044499964663.916990896089",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "We have donuts, muffins and bagels what would you like?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.55600354635.1178447546808",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What would you like to drink coffee, tea or green tea?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1477084903041.20051663431",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What would you like to eat muffin, donut or bagel?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.517004182457",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "You would like a {food} is that correct?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.647159903384.1004109397150",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What would you like in your {drink} we have cream, sugar, milk or you can just have it plain. "
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.647159903384.1004109397150.1017310550334",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What would you like in your {drink} we have cream, sugar, milk or you can just have it plain. "
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.647159903384.1004109397150",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What would you like in your {drink} we have cream, sugar, milk or you can just have it plain. "
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.352094758565",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "OK that is a {size} {drink} with {modifier} is that correct?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Ok that is a {size} {drink} is that correct?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Ok that is a {size} {drink} {modifierQty} {modifier} is that correct?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.94771314245.32490681012.1131713732868",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "We have small, medium or large. What size would you like?"
+                    }
+                ]
+            },
+            {
+                "id": "Slot.Validation.1382757635071.1386853359697.267215220838",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Sorry I didn't quite get that. Is this order to stay, go or delivery?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1382757635071.1497583838226",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How will you be paying for your order Cash, debit or credit card?"
+                    }
+                ]
+            }
+        ]
+    }
+}
